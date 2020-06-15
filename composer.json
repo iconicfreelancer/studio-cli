@@ -1,0 +1,27 @@
+{
+    "name": "iconicfreelancer/studio",
+    "description": "Command line to setup a new studio WordPress theme or plugin",
+    "keywords": ["studio", "wordpress", "themes", "plugins"],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Tariq Latif",
+            "email": "care@iconicfreelancer.com"
+        }
+    ],
+    "require": {
+        "ext-zip": "*",
+        "guzzlehttp/guzzle": "~6.0",
+        "symfony/console": "~3.0|~4.0",
+        "symfony/filesystem": "~3.0|~4.0",
+        "symfony/process": "~3.0|~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Studio\\": "src"
+        }
+    },
+    "bin": [
+        "studio"
+    ]
+}
