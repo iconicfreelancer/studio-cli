@@ -9,7 +9,7 @@
  * @link     http://alecaddd.com
  */
 
-namespace Awps;
+namespace Studio;
 
 use ZipArchive;
 use RuntimeException;
@@ -30,7 +30,7 @@ use Symfony\Component\Console\Question\Question;
  * @license  http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @link     http://alecaddd.com
  */
-class NewCommand extends Command
+class Studio extends Command
 {
 	private $client;
 

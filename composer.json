@@ -1,5 +1,5 @@
 {
-    "name": "alecaddd/awps-cli",
+    "name": "iconicfreelancer/studio",
     "description": "Nifty Command Line Application to quickly setup a new AWPS theme in WordPress",
     "keywords": ["awps", "wordpress", "themes"],
     "license": "GPL-3.0",
@@ -14,16 +14,15 @@
         "guzzlehttp/guzzle": "~6.0",
         "symfony/console": "~3.0|~4.0",
         "symfony/filesystem": "~3.0|~4.0",
-        "symfony/process": "~3.0|~4.0",
-        "malecaddd/awps-cli" : "dev-master"
+        "symfony/process": "~3.0|~4.0"
     },
     "autoload": {
         "psr-4": {
-            "Awps\\": "src"
+            "Studio\\": "src"
         }
     },
     "bin": [
-        "awps"
+        "studio"
     ],
     "minimum-stability": "dev"
 }
