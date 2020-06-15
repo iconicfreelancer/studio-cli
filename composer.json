@@ -15,7 +15,7 @@
         "symfony/console": "~3.0|~4.0",
         "symfony/filesystem": "~3.0|~4.0",
         "symfony/process": "~3.0|~4.0",
-        "mortezarajabi/jdate" : "dev-master"
+        "malecaddd/awps-cli" : "dev-master"
     },
     "autoload": {
         "psr-4": {
