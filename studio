@@ -11,11 +11,11 @@
 //     require __DIR__.'/../../autoload.php';
 // }
 
-use Studio\Studio;
+use Studio\NewCommand;
 use Symfony\Component\Console\Application;
 
 $app = new Application('Studio Installer', '1.0.0');
 
-$app->add(new Studio(new GuzzleHttp\Client()));
+$app->add(new NewCommand(new GuzzleHttp\Client()));
 
 $app->run();

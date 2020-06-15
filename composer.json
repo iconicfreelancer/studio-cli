@@ -18,11 +18,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Studio\\": "src"
+            "Awps\\": "src"
         }
     },
     "bin": [
-        "studio"
+        "awps"
     ],
     "minimum-stability": "dev"
 }
