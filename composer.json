@@ -1,12 +1,12 @@
 {
-    "name": "iconicfreelancer/studio",
-    "description": "Command line to setup a new studio WordPress theme or plugin",
-    "keywords": ["studio", "wordpress", "themes", "plugins"],
+    "name": "alecaddd/awps-cli",
+    "description": "Nifty Command Line Application to quickly setup a new AWPS theme in WordPress",
+    "keywords": ["awps", "wordpress", "themes"],
     "license": "GPL-3.0",
     "authors": [
         {
-            "name": "Tariq Latif",
-            "email": "care@iconicfreelancer.com"
+            "name": "Alessandro Castellani",
+            "email": "me@alecaddd.com"
         }
     ],
     "require": {
@@ -18,10 +18,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Studio\\": "src"
+            "Awps\\": "src"
         }
     },
     "bin": [
-        "studio"
+        "awps"
     ]
 }

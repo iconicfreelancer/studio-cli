@@ -30,7 +30,7 @@ use Symfony\Component\Console\Question\Question;
  * @license  http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
  * @link     http://alecaddd.com
  */
-class Studio extends Command
+class NewCommand extends Command
 {
 	private $client;
 
@@ -49,7 +49,7 @@ class Studio extends Command
 	public function configure()
 	{
 		$this
-			->setName('theme')
+			->setName('new')
 			->setDescription('Create a new AWPS Theme installation')
 			->addArgument('name', InputArgument::REQUIRED, 'Insert the folder name')
 			->addOption('dev', null, InputOption::VALUE_NONE, 'Download the latest "development" release')
@@ -78,7 +78,7 @@ class Studio extends Command
 			$this->assertApplicationDoesNotExists($directory, $output);
 		}
 
-		//$this->assertLocationInsideWordPress($directory, $output);
+		$this->assertLocationInsideWordPress($directory, $output);
 
 		$helper = $this->getHelper("question");
 
