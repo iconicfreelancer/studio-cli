@@ -1,15 +1,15 @@
 <?php
-/**
- * Generate a new installation of AWPS
- *
- * @category CLI
- * @package  Awps-cli
- * @author   Alessandro Castellani <me@alecaddd.com>
- * @license  http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @link     http://alecaddd.com
- */
 
-namespace Awps;
+ /**
+  * Generates a new Studio project for WordPress
+  *
+  * @package 	Studio-cli
+  * @author 	Tariq Latif <care@iconicfreelancer.com>
+  * @link 		https://www.iconicfreelancer.com
+  * @license 	http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3) 
+  */
+
+namespace Studio;
 
 use ZipArchive;
 use RuntimeException;
@@ -21,16 +21,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
-/**
- * Generate a new installation of AWPS
- *
- * @category CLI
- * @package  Awps-cli
- * @author   Alessandro Castellani <me@alecaddd.com>
- * @license  http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
- * @link     http://alecaddd.com
- */
-class NewCommand extends Command
+
+class StudioCommand extends Command
 {
 	private $client;
 
@@ -49,11 +41,12 @@ class NewCommand extends Command
 	public function configure()
 	{
 		$this
-			->setName('new')
-			->setDescription('Create a new AWPS Theme installation')
+			->setName('theme')
+			->setDescription('Create a new Theme installation')
 			->addArgument('name', InputArgument::REQUIRED, 'Insert the folder name')
 			->addOption('dev', null, InputOption::VALUE_NONE, 'Download the latest "development" release')
 			->addOption('force', null, InputOption::VALUE_NONE, 'Forces the install even if the directory already exists');
+
 	}
 
 	/**
@@ -78,20 +71,20 @@ class NewCommand extends Command
 			$this->assertApplicationDoesNotExists($directory, $output);
 		}
 
-		$this->assertLocationInsideWordPress($directory, $output);
+		//$this->assertLocationInsideWordPress($directory, $output);
 
 		$helper = $this->getHelper("question");
 
-		$question = new Question("Name of your theme? <info>(Awps)</info> ", null);
+		$question = new Question("Name of your theme? <info>(Studio)</info> ", null);
 		$themeName = $helper->ask($input, $output, $question);
 
-		$question = new Question("PHP Namespace of your theme? <info>(Awps)</info> ", null);
+		$question = new Question("PHP Namespace of your theme? <info>(Studio)</info> ", null);
 		$namespace = $helper->ask($input, $output, $question);
 
 		$question = new Question("Website URL <info>(Current installation URL)</info> ", null);
 		$wp_url = $helper->ask($input, $output, $question);
 
-		$question = new Question("Description? <info>(Alecaddd WordPress Starter theme)</info> ", null);
+		$question = new Question("Description? <info>(Studio Cli Setup)</info> ", null);
 		$description = $helper->ask($input, $output, $question);
 
 		$question = new Question("Theme URI? <info>(Website URL for theme)</info> ", null);
@@ -126,7 +119,7 @@ class NewCommand extends Command
 		shell_exec("cd ".$directory." && npm install");
 		shell_exec("cd ".$directory." && npm run dev");
 
-		$output->writeln('<comment>Application ready, Happy Coding!</comment>');
+		$output->writeln('<comment>Application is ready!</comment>');
 	}
 
 	/**
@@ -177,7 +170,7 @@ class NewCommand extends Command
 	 */
 	private function download($zipFile)
 	{
-		$response = $this->client->get('https://github.com/Alecaddd/awps/archive/master.zip')->getBody();
+		$response = $this->client->get('https://github.com/iconicfreelancer/envelop-contact-form/archive/master.zip')->getBody();
 
 		file_put_contents($zipFile, $response);
 

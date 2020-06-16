@@ -1,0 +1,13 @@
+#! /usr/bin/env php
+
+<?php
+
+
+use Studio\StudioCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application('Studio Installer', '1.0.0');
+
+$app->add(new StudioCommand(new GuzzleHttp\Client()));
+
+$app->run();
